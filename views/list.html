@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Logs Viewer Application">
+    <title>Logs Viewer</title>
+    <link rel="stylesheet" href="list.css">  <!-- Linking external CSS -->
+    
+    <!-- Firebase SDK - Simple and reliable approach -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    
+    <script src="list.js" defer></script>  <!-- Linking external JS -->
+</head>
+<body>
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Event Data for IP: <span id="modalIp"></span></h2>
+            <div class="table-container">
+                <table id="modalTable">
+                    <thead>
+                        <tr> 
+                            <th>Timestamp</th>
+                            <th>Type</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Logs Viewer</h2>
+        <div id="errorMessage" class="error-message"></div>
+        <div id="toast" class="toast"></div>
+        <!-- <button id="toggleFilter" class="toggle-btn off" >Show All</button> -->
+        
+        <!-- Filter by Flags and Group View -->
+        <button id="toggleGroupView" class="toggle-btn off">Group by IP</button>
+        <button id="toggleUpdateNotifications" class="toggle-btn">Disable Update Notifications</button>
+        <button id="deleteAllButton" class="toggle-btn" style="display: none;">Delete All Rows</button>
+        <div id="flagButtonsContainer"></div>
+        <div class="toggle-columns">
+            <label><input type="checkbox" id="toggle-region" checked> Region</label>
+            <label><input type="checkbox" id="toggle-city" checked> City</label>
+            <label><input type="checkbox" id="toggle-method" checked> Method</label>
+            <label><input type="checkbox" id="toggle-source" checked> Source</label>
+            <label><input type="checkbox" id="toggle-url" checked> Request URL</label>
+            <label><input type="checkbox" id="toggle-mac" checked /> Show MAC Address</label>
+            <label><input type="checkbox" id="toggle-os" checked /> Show OS</label>
+        </div>
+        
+            <div class="table-container">
+                <table id="logsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Timestamp</th>
+                            <th>Country</th>
+                            <th>Region</th>
+                            <th>City</th>
+                            <th>Method</th>
+                            <th>Source</th>
+                            <th>IP</th>
+                            <th>Request URL</th>
+                            <th>Flag</th>
+                            <th>OS</th>
+                            <th>PC name / Username</th>
+                            <th>Control</th>
+                            <th>View Events</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logsTableBody"></tbody>
+                </table>
+            </div>
+    </div>
+</body>
+</html>

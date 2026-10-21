@@ -1,0 +1,195 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;  /* Smooth transition for hover */
+}
+
+th {
+    background-color: #4caf50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+button {
+    margin: 2px;
+}
+.btn:hover {
+    background-color: darkred;
+}
+
+.checkbox {
+    margin: 0;
+}
+
+.toggle-btn {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.toggle-btn.off {
+    background-color: #f44336;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+.toggle-btn.off:hover {
+    background-color: #e53935;
+}
+
+.hidden-row {
+    display: none;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    text-align: center;
+    margin: 10px;
+}
+
+#flagButtonsContainer {
+    margin-left: 10px;
+    display: inline-block;
+
+}
+
+button.active {
+    background-color: green; /* Active button color */
+    color: white;
+}
+
+button.inactive {
+    background-color: red; /* Inactive button color */
+    color: white;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 2px;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 8px;
+    }
+
+    .btn, .toggle-btn {
+        font-size: 14px;
+    }
+}
+
+/* Toast Notification Styles */
+.toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
